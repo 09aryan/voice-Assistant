@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "578975185258",
+    "project_id": "chat-bot-d322d",
+    "storage_bucket": "chat-bot-d322d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578975185258:android:003ea7d783020f94298d13",
+        "android_client_info": {
+          "package_name": "com.example.app_second"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578975185258-hr4on0rnfbhvabc2h08dh09jeg43ulgu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_second",
+            "certificate_hash": "cc9607c3255ba33c81831832345913f0389c1b3c"
+          }
+        },
+        {
+          "client_id": "578975185258-48edrpjror04gavtmu5fjjkuo9j4kud9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH23HT5ZExgle5ubpq7UGrdGF8XSmdRus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578975185258-48edrpjror04gavtmu5fjjkuo9j4kud9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
