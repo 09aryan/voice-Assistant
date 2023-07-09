@@ -60,8 +60,8 @@ class _MyLoginPageState extends State<MyLoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
+    return 
+    Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
         image: NetworkImage(
@@ -174,6 +174,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                               text: 'Already have an account?',
                               style: TextStyle(color: Colors.black),
                               // style: kHaveAnAccountStyle(size),
+         
                               children: [
                                 TextSpan(
                                   text: " Login",
@@ -191,6 +192,6 @@ class _MyLoginPageState extends State<MyLoginPage> {
           ],
         ),
       ),
-    ));
+    );
   }
 }

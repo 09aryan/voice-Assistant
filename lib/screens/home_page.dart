@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   final flutterTts = FlutterTts();
   String? generatedContent;
   String? generatedImageUrl;
+  bool isGenerating = false;
   @override
   void initState() {
     super.initState();
@@ -52,6 +53,19 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  Future<void> stopGeneration() async {
+    stopListening(); // Stop the speech recognition
+    await flutterTts.stop(); // Stop text-to-speech playback
+
+    // Perform any necessary steps to stop the generation process
+    // Update any relevant state variables
+    setState(() {
+      generatedContent = null;
+      generatedImageUrl = null;
+      isGenerating = false;
+    });
+  }
+
   /// This is the callback that the SpeechToText plugin calls when
   /// the platform returns recognized words.
   void onSpeechResult(SpeechRecognitionResult result) {
@@ -66,7 +80,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     speechToText.stop();
     flutterTts.stop();
@@ -80,7 +93,7 @@ class _HomePageState extends State<HomePage> {
       // ),
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Stack(
@@ -155,6 +168,9 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold)),
             ),
           ),
+          FloatingActionButton(onPressed: () {
+            stopGeneration();
+          }),
           Visibility(
             visible: generatedContent == null && generatedImageUrl == null,
             child: Column(
@@ -208,6 +224,14 @@ class _HomePageState extends State<HomePage> {
           speechToText.isListening ? Icons.stop : Icons.mic,
         ),
       ),
+
+      // Ele: FloatingActionButton(
+      //   backgroundColor: Colors.red, // Customize the button color
+      //   onPressed: () {
+      //     stopGeneration();
+      //   },
+      //   child: Icon(Icons.stop),
+      // ),
     );
   }
 }

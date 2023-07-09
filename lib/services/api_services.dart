@@ -93,7 +93,7 @@ class OpneAIService {
         Uri.parse('https://api.openai.com/v1/images/generations'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $apikey2',
+          'Authorization': 'Bearer $apiKey',
         },
         body: jsonEncode({
           'prompt': prompt,
